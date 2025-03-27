@@ -1,0 +1,145 @@
+/* Style général du body */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    color: #f1c40f;
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+main {
+    top: 100px; /* Ajoute un espace de 100px au-dessus du contenu de la page */
+}
+
+/* Titre principal */
+h2 {
+    margin-top: 120px;
+    font-size: 2em;
+    color: #f39c12;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Header */
+header {
+    padding: 20px 0;
+    background-color: #333;
+    color: #f1c40f;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    color: #f39c12;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+}
+
+header nav {
+    margin-top: 20px;
+}
+
+header nav a {
+    color: #f1c40f;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1em;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    margin-top: 60px;
+    padding: 20px;
+    background-color: #222;
+    font-size: 1.1em;
+}
+
+footer a {
+    color: #f39c12;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    font-size: 1.2em;
+    background-color: #444;
+    color: #f1c40f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+    background-color: #f39c12;
+    color: #1e1e1e;
+}
+
+.pagination button:disabled {
+    background-color: #222;
+    cursor: not-allowed;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    body {
+        font-size: 1em;
+    }
+
+    header h1 {
+        font-size: 2.4em;
+    }
+
+    header nav {
+        text-align: center;
+    }
+
+    header nav a {
+        margin: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 0.9em;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header nav {
+        text-align: center;
+    }
+
+    header nav a {
+        margin: 8px;
+    }
+
+    footer {
+        font-size: 1em;
+    }
+}
