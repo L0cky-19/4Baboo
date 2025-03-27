@@ -1,0 +1,69 @@
+-- Création de la table Users
+CREATE TABLE Users (
+    ID_User INT AUTO_INCREMENT,
+    Prenom VARCHAR(100) NOT NULL,
+    Nom VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    MotDePasse VARCHAR(100) NOT NULL,
+    Role VARCHAR(50) NOT NULL,
+    PRIMARY KEY (ID_User)
+);
+
+-- Création de la table Entreprises
+CREATE TABLE Entreprises (
+    ID_Entreprise INT AUTO_INCREMENT,
+    Nom VARCHAR(100) NOT NULL,
+    Description VARCHAR(3000),
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    Telephone VARCHAR(15) NOT NULL UNIQUE,
+    PRIMARY KEY (ID_Entreprise)
+);
+
+-- Création de la table Offres
+CREATE TABLE Offres (
+    ID_Offre INT AUTO_INCREMENT,
+    Titre VARCHAR(300) NOT NULL,
+    Date_Debut DATE NOT NULL,
+    Date_Fin DATE NOT NULL,
+    Description VARCHAR(3000),
+    Remuneration DECIMAL(10,2) NOT NULL,
+    ID_Entreprise INT NOT NULL,
+    PRIMARY KEY (ID_Offre),
+    FOREIGN KEY (ID_Entreprise) REFERENCES Entreprises(ID_Entreprise) ON DELETE CASCADE
+);
+
+-- Création de la table Candidatures
+CREATE TABLE Candidatures (
+    ID_Candidature INT AUTO_INCREMENT,
+    Date_Candidature DATE NOT NULL,
+    CV_Chemin VARCHAR(255) NOT NULL,
+    Chemin_Lettre_Motivation VARCHAR(255),
+    ID_Offre INT,
+    ID_User INT NOT NULL,
+    PRIMARY KEY (ID_Candidature),
+    FOREIGN KEY (ID_Offre) REFERENCES Offres(ID_Offre) ON DELETE CASCADE,
+    FOREIGN KEY (ID_User) REFERENCES Users(ID_User) ON DELETE CASCADE
+);
+
+-- Création de la table WishLists
+CREATE TABLE WishLists (
+    ID_WishList INT AUTO_INCREMENT,
+    ID_User INT NOT NULL,
+    ID_Offre INT,
+    PRIMARY KEY (ID_WishList),
+    UNIQUE (ID_User),
+    FOREIGN KEY (ID_User) REFERENCES Users(ID_User) ON DELETE CASCADE,
+    FOREIGN KEY (ID_Offre) REFERENCES Offres(ID_Offre) ON DELETE CASCADE
+);
+
+-- Création de la table Evaluations
+CREATE TABLE Evaluations (
+    ID_Evaluation INT AUTO_INCREMENT,
+    Note INT NOT NULL CHECK (Note BETWEEN 1 AND 5),
+    Commentaire VARCHAR(300),
+    ID_User INT NOT NULL,
+    ID_Entreprise INT NOT NULL,
+    PRIMARY KEY (ID_Evaluation),
+    FOREIGN KEY (ID_User) REFERENCES Users(ID_User) ON DELETE CASCADE,
+    FOREIGN KEY (ID_Entreprise) REFERENCES Entreprises(ID_Entreprise) ON DELETE CASCADE
+);
