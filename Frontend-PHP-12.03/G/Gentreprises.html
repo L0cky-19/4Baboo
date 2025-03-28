@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Entreprises</title>
+    <link rel="stylesheet" href="Gstyles.css">
+</head>
+<body class="page-body">
+    
+    <header class="navbar">
+        <h1 class="nav-header">Gestion des Entreprises</h1>
+        <nav class="nav-container">
+            <ul class="nav-list">
+                <li><a href="#rechercher" class="nav-link">Rechercher</a></li>
+                <li><a href="#ajouter" class="nav-link">Ajouter</a></li>
+                <li><a href="#modifier" class="nav-link">Modifier</a></li>
+                <li><a href="#supprimer" class="nav-link">Supprimer</a></li>
+                <li><a href="../index.php" class="nav-zelda">Accueil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Rechercher une entreprise -->
+        <section id="rechercher" class="description-section" aria-labelledby="rechercher-heading">
+            <h2 id="rechercher-heading" class="section-title">Rechercher une entreprise</h2>
+            <form action="rechercher_entreprise.html" method="GET" class="form-container">
+                <div class="form-group">
+                    <label for="nom" class="form-label">Nom:</label>
+                    <input type="text" id="nom" name="nom" class="form-input" aria-label="Nom de l'entreprise à rechercher">
+                </div>
+                <button type="submit" class="form-button">Rechercher</button>
+            </form>
+        </section>
+    
+        <!-- Ajouter une entreprise -->
+        <section id="ajouter" class="description-section" aria-labelledby="ajouter-heading">
+            <h2 id="ajouter-heading" class="section-title">Ajouter une entreprise</h2>
+            <form action="ajouter_entreprise.html" method="POST" class="form-container">
+                <div class="form-group">
+                    <label for="nom" class="form-label">Nom:</label>
+                    <input type="text" id="nom" name="nom" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" required class="form-input">
+                </div>
+                <button type="submit" class="form-button">Ajouter</button>
+            </form>
+        </section>
+    
+        <!-- Modifier une entreprise -->
+        <section id="modifier" class="description-section" aria-labelledby="modifier-heading">
+            <h2 id="modifier-heading" class="section-title">Modifier une entreprise</h2>
+            <form action="modifier_entreprise.html" method="POST" class="form-container">
+                <div class="form-group">
+                    <label for="entreprise_id" class="form-label">ID de l'entreprise:</label>
+                    <input type="text" id="entreprise_id" name="entreprise_id" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="nom" class="form-label">Nom:</label>
+                    <input type="text" id="nom" name="nom" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" class="form-input">
+                </div>
+                <button type="submit" class="form-button">Modifier</button>
+            </form>
+        </section>
+    
+        <!-- Liste des entreprises -->
+        <section id="supprimer" class="description-section" aria-labelledby="entreprises-heading">
+            <h2 id="entreprises-heading" class="section-title">Liste des entreprises</h2>
+            <ul class="entreprise-list">
+                <li class="entreprise-item">Tech Solutions - contact@techsolutions.com</li>
+                <li class="entreprise-item">InnovaCorp - info@innovacorp.com</li>
+                <li class="entreprise-item">Web Dynamics - support@webdynamics.com</li>
+                <li class="entreprise-item">CloudSoft - hello@cloudsoft.com</li>
+                <li class="entreprise-item">Green Energy - contact@greenenergy.com</li>
+            </ul>
+        </section>
+    </main>
+    
+</body>
+</html>

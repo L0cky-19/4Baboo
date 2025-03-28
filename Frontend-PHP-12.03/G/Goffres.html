@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Offres de Stage</title>
+    <link rel="stylesheet" href="Gstyles.css">
+</head>
+<body>
+    
+    <header class="navbar">
+        <h1 class="nav-header">Gestion des Offres de Stage</h1>
+        <nav class="nav-container">
+            <ul class="nav-list">
+                <li><a href="#rechercher" class="nav-link">Rechercher</a></li>
+                <li><a href="#ajouter" class="nav-link">Ajouter</a></li>
+                <li><a href="#modifier" class="nav-link">Modifier</a></li>
+                <li><a href="#supprimer" class="nav-link">Supprimer</a></li>
+                <li><a href="../index.php" class="nav-zelda">Accueil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Rechercher une offre -->
+        <section id="rechercher" class="description-section">
+            <h2>Rechercher une offre de stage</h2>
+            <form action="rechercher_offre.html" method="GET" class="form-container">
+                <div class="form-group">
+                    <label for="competences" class="form-label">Compétences:</label>
+                    <input type="text" id="competences" name="competences" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="entreprise" class="form-label">Entreprise:</label>
+                    <input type="text" id="entreprise" name="entreprise" class="form-input">
+                </div>
+                <button type="submit" class="form-button">Rechercher</button>
+            </form>
+        </section>
+
+        <!-- Ajouter une offre -->
+        <section id="ajouter" class="description-section">
+            <h2>Ajouter une offre de stage</h2>
+            <form action="ajouter_offre.html" method="POST" class="form-container">
+                <div class="form-group">
+                    <label for="competences" class="form-label">Compétences:</label>
+                    <input type="text" id="competences" name="competences" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="titre" class="form-label">Titre de l'offre:</label>
+                    <input type="text" id="titre" name="titre" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="description" class="form-label">Description:</label>
+                    <textarea id="description" name="description" required class="form-input"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="entreprise" class="form-label">Entreprise:</label>
+                    <input type="text" id="entreprise" name="entreprise" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="remuneration" class="form-label">Rémunération:</label>
+                    <input type="number" id="remuneration" name="remuneration" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="dates" class="form-label">Dates de l'offre:</label>
+                    <input type="text" id="dates" name="dates" required class="form-input">
+                </div>
+                <button type="submit" class="form-button">Ajouter</button>
+            </form>
+        </section>
+
+        <!-- Modifier une offre -->
+        <section id="modifier" class="description-section">
+            <h2>Modifier une offre de stage</h2>
+            <form action="modifier_offre.html" method="POST" class="form-container">
+                <div class="form-group">
+                    <label for="offre_id" class="form-label">ID de l'offre:</label>
+                    <input type="text" id="offre_id" name="offre_id" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="competences" class="form-label">Compétences:</label>
+                    <input type="text" id="competences" name="competences" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="titre" class="form-label">Titre de l'offre:</label>
+                    <input type="text" id="titre" name="titre" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="description" class="form-label">Description:</label>
+                    <textarea id="description" name="description" class="form-input"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="entreprise" class="form-label">Entreprise:</label>
+                    <input type="text" id="entreprise" name="entreprise" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="remuneration" class="form-label">Rémunération:</label>
+                    <input type="number" id="remuneration" name="remuneration" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="dates" class="form-label">Dates de l'offre:</label>
+                    <input type="text" id="dates" name="dates" class="form-input">
+                </div>
+                <button type="submit" class="form-button">Modifier</button>
+            </form>
+        </section>
+
+        <!-- Liste des offres -->
+        <section id="offres" class="description-section" aria-labelledby="offres-heading">
+            <h2 id="offres-heading" class="section-title">Liste des offres de stage</h2>
+            <ul class="offre-list">
+                <li class="offre-item">Développeur Web - Tech Solutions - Durée: 6 mois</li>
+                <li class="offre-item">Ingénieur Logiciel - InnovaCorp - Durée: 4 mois</li>
+                <li class="offre-item">Assistant Marketing - Web Dynamics - Durée: 3 mois</li>
+                <li class="offre-item">Développeur Mobile - CloudSoft - Durée: 5 mois</li>
+                <li class="offre-item">Analyste Données - Green Energy - Durée: 6 mois</li>
+            </ul>
+        </section>
+        
+    </main>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Étudiants</title>
+    <link rel="stylesheet" href="Gstyles.css">
+</head>
+<body>
+    
+    <header class="navbar">
+        <h1 class="nav-header">Gestion des Étudiants</h1>
+        <nav class="nav-container">
+            <ul class="nav-list">
+                <li><a href="#rechercher" class="nav-link">Rechercher</a></li>
+                <li><a href="#ajouter" class="nav-link">Ajouter</a></li>
+                <li><a href="#modifier" class="nav-link">Modifier</a></li>
+                <li><a href="#supprimer" class="nav-link">Supprimer</a></li>
+                <li><a href="../index.php" class="nav-zelda">Accueil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Rechercher un étudiant -->
+        <section id="rechercher" class="description-section">
+            <h2>Rechercher un étudiant</h2>
+            <form action="rechercher_etudiant.html" method="GET" class="form-container">
+                <div class="form-group">
+                    <label for="nom" class="form-label">Nom:</label>
+                    <input type="text" id="nom" name="nom" class="form-input">
+                </div>
+                <button type="submit" class="form-button">Rechercher</button>
+            </form>
+        </section>
+
+        <!-- Ajouter un étudiant -->
+        <section id="ajouter" class="description-section">
+            <h2>Ajouter un étudiant</h2>
+            <form action="ajouter_etudiant.html" method="POST" class="form-container">
+                <div class="form-group">
+                    <label for="nom" class="form-label">Nom:</label>
+                    <input type="text" id="nom" name="nom" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="prenom" class="form-label">Prénom:</label>
+                    <input type="text" id="prenom" name="prenom" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" required class="form-input">
+                </div>
+                <button type="submit" class="form-button">Ajouter</button>
+            </form>
+        </section>
+
+        <!-- Modifier un étudiant -->
+        <section id="modifier" class="description-section">
+            <h2>Modifier un étudiant</h2>
+            <form action="modifier_etudiant.html" method="POST" class="form-container">
+                <div class="form-group">
+                    <label for="etudiant_id" class="form-label">ID de l'étudiant:</label>
+                    <input type="text" id="etudiant_id" name="etudiant_id" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="nom" class="form-label">Nom:</label>
+                    <input type="text" id="nom" name="nom" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="prenom" class="form-label">Prénom:</label>
+                    <input type="text" id="prenom" name="prenom" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" class="form-input">
+                </div>
+                <button type="submit" class="form-button">Modifier</button>
+            </form>
+        </section>
+
+        <!-- Liste des étudiants -->
+        <section id="etudiants" class="description-section" aria-labelledby="etudiants-heading">
+            <h2 id="etudiants-heading" class="section-title">Liste des étudiants</h2>
+            <ul class="etudiant-list">
+                <li class="etudiant-item">Pierre Dupont - pierre.dupont@example.com</li>
+                <li class="etudiant-item">Sophie Martin - sophie.martin@example.com</li>
+                <li class="etudiant-item">Lucie Bernard - lucie.bernard@example.com</li>
+                <li class="etudiant-item">Michel Lefevre - michel.lefevre@example.com</li>
+                <li class="etudiant-item">Claire Dubois - claire.dubois@example.com</li>
+            </ul>
+        </section>
+
+</body>
+</html>

@@ -1,0 +1,669 @@
+/* ============================== IMPORTS ============================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+/* ============================== VARIABLES ============================== */
+:root {
+    --bg-color: #121212;
+    --main-color: #f9c300;
+    --card-bg: #1e1e1e;
+    --button-hover: orange;
+}
+
+/* ============================== STYLE GÉNÉRAL ============================== */
+body, .bg-dark, .text-yellow {
+    background: var(--bg-color);
+    color: var(--main-color);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 1.125rem;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* ============================== ANIMATIONS ============================== */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.stat-item, .company, .offer, .whishlist-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover, .company:hover, .offer:hover, .whishlist-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================== HEADER ============================== */
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    color: var(--main-color);
+    text-align: center;
+    z-index: 100;
+    padding: 0.75vw;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.header-title {
+    margin: 0;
+    font-size: 2.25vw;
+    font-weight: 600;
+}
+
+.main-content {
+    margin-top: 120px;
+    padding: 15px;
+}
+
+/* ============================== NAVIGATION ============================== */
+.navbar {
+    margin-top: 0.375vw;
+    position: fixed;  /* Pour la rendre toujours visible */
+    top: 0;
+    left: 0;
+    width: 100%;  /* Prend toute la largeur de l'écran */
+    background-color: black; /* Fond noir */
+    z-index: 1000; /* Met la navbar au-dessus des autres éléments */
+    padding: 0.5rem 2vw;  /* Un peu de padding pour l'espacement */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* Séparer le titre et le menu */
+}
+
+.nav-header {
+    color: var(--main-color);  /* Couleur du titre */
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    padding: 0;
+}
+
+.nav-item {
+    display: inline;
+}
+
+.nav-link {
+    color: var(--main-color);  /* Couleur des liens */
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+    transition: all 0.3s ease-in-out;
+    padding: 0.375rem;
+    border-radius: 5px;
+}
+
+.nav-zelda {
+    color: #FFFFFF;  /* Couleur des liens */
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+    transition: all 0.3s ease-in-out;
+    padding: 0.375rem;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    background: rgba(255, 200, 0, 0.2);
+    color: white;
+}
+
+.nav-on {
+    font-weight: 600;
+    color: orange;
+    border-bottom: 2px solid orange;
+}
+
+
+/* ============================== BOUTON DE CONNEXION (BIG BUTTON) ============================== */    
+.big-button {
+    position: absolute;
+    top: 1.125vw;
+    right: 1.5vw;
+    padding: 0.6vw 1.125vw;
+    font-size: 1.5rem;
+    background: var(--main-color);
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.big-button:hover {
+    color: white;
+    background: orange;
+}
+
+/* ============================== FENÊTRE DE CONNEXION ET UTILISATEUR ============================== */
+.user-window, .login-form {
+    position: fixed;
+    top: 8vw;
+    right: 0;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 1.5vw;
+    border-radius: 10px 0 0 10px;
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.3);
+    width: 25vw;
+    max-width: 350px;
+    text-align: center;
+    z-index: 99;
+}
+
+.user-window-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-window-link {
+    color: var(--main-color);
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.user-window-link:hover {
+    color: white;
+}
+
+.user-window-item {
+    margin-bottom: 1.5vw;
+}
+
+.user-window-form, .user-window-list {
+    margin: 0;
+    padding: 0;
+}
+
+.user-window-active {
+    display: block !important;
+}
+
+.login-input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+}
+
+.login-button, .user-window-button {
+    background-color: var(--main-color);
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover, .user-window-button:hover {
+    color: white;
+    background: orange;
+}
+
+/* ===================== FORMULAIRE ===================== */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacement entre chaque ligne */
+    max-width: 500px; /* Ajustable selon le design */
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+.form-label {
+    flex: 1;
+    color: var(--main-color);
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: right;
+}
+
+.form-input {
+    flex: 2;
+    padding: 8px;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    background: var(--card-bg);
+    color: white;
+}
+
+.form-button {
+    background-color: #FFA500; /* Orange */
+    color: #000000; /* Noir */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.form-button:hover {
+    background-color: #FFD700; /* Jaune doré */
+}
+
+
+/* ============================== SECTION DESCRIPTION ============================== */
+.description-section {
+    max-width: 50vw;
+    margin: 10vh auto 5vh;
+    font-size: 1.2rem;
+    text-align: center;
+    background: rgba(255, 204, 0, 0.1);
+    padding: 2vw;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.2);
+    border: 1px solid var(--main-color);
+}
+
+.description-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.description-section p {
+    color: white;
+    line-height: 1.6;
+    font-size: 1.125rem;
+}
+
+/* ============================== STATISTIQUES ============================== */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 2%;
+}
+
+.stat-item {
+    flex: 0 0 25%;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #777;
+}
+
+.stats-section {
+    display: flex;
+    justify-content: center;
+    gap: 3.75vw;
+    margin: 3.75vh auto;
+    text-align: center;
+}
+
+.stat-item {
+    background: #1e1e1e;
+    padding: 1.5vw;
+    border-radius: 10px;
+    width: 15vw;
+    max-width: 187.5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.stat-item-title {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin-bottom: 0.375rem;
+}
+
+.stat-item-text {
+    color: white;
+    font-size: 1.125rem;
+}
+
+/* ============================== CONTENEUR DES IMAGES ============================== */
+.images-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vw;
+    margin: 6vh auto;
+}
+
+.image-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    background: #222;
+    padding: 0.75vw;
+    border-radius: 10px;
+    width: 18.75vw;
+    max-width: 262.5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.images-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.image-text {
+    margin-top: 0.6rem;
+    font-size: 0.75rem;
+}
+
+.image-link:hover {
+    transform: translateY(-7.5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================== FOOTER ============================== */
+.footer {
+    text-align: center;
+    padding: 1.5vw;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    font-size: 1.125rem;
+    margin-top: 3.75vh;
+}
+
+.footer-link {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: orange;
+}
+
+/* ============================== RESPONSIVITÉ ============================== */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 4.5vw;
+    }
+
+    .navbar-list {
+        flex-direction: column;
+        gap: 1vw;
+    }
+
+    .images-container {
+        flex-direction: column;
+        gap: 3vw;
+    }
+
+    .image-link {
+        width: 50%;
+    }
+
+    .stats-section {
+        flex-direction: column;
+        gap: 2vw;
+    }
+
+    .stat-item {
+        width: 45%;
+        max-width: none;
+    }
+}
+
+/* ============================== ENTREPRISES ============================== */
+.company-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    gap: 1.5vw;
+    margin: 3.75vh auto;
+    padding: 1.5vw;
+    max-width: 60vw;
+}
+
+.company {
+    background: #1e1e1e;
+    padding: 1.125vw;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.company:hover {
+    transform: translateY(-7.5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.company-logo {
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+.company-logo img {
+    width: 75px;
+    height: auto;
+    object-fit: contain;
+}
+
+.company-content {
+    text-align: center;
+}
+
+.company-content-title {
+    font-size: 1.125rem;
+    color: var(--main-color);
+    margin-bottom: 0.375rem;
+}
+
+.company-content-text {
+    color: white;
+    font-size: 1.125rem;
+    margin: 0.15rem 0;
+}
+
+.company-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 0.525rem 0.9rem;
+    font-size: 0.75rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--main-color);
+    color: black;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: orange;
+    color: white;
+}
+
+.btn-secondary {
+    background: none;
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+}
+
+.btn-secondary:hover {
+    background: var(--main-color);
+    color: black;
+}
+
+
+/* ============================== OFFRES ET WHISHLIST ============================== */
+.offer-container, .whishlist-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+    margin-top: 15px;
+}
+
+.offer, .whishlist-item {
+    background: #222;
+    padding: 1.5vw;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.offer:hover, .whishlist-item:hover {
+    transform: translateY(-7.5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.offer h3, .whishlist-item h3 {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin-bottom: 0.375rem;
+}
+
+.offer p, .whishlist-item p {
+    color: white;
+    font-size: 1.125rem;
+    margin: 0.375rem 0;
+}
+
+.offer .btn-primary, .whishlist-item .btn-primary {
+    background-color: var(--main-color);
+    padding: 0.75vw;
+    color: black;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.offer .btn-primary:hover, .whishlist-item .btn-primary:hover {
+    background-color: orange;
+    color: white;
+}
+
+/* ============================== PAGINATION ============================== */
+.pagination button {
+    background-color: #000000;
+    color: #FFD700;
+    border: 1px solid #FFD700;
+    padding: 7.5px 15px;
+    margin: 3.75px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+    background-color: #FFD700;
+    color: #000000;
+}
+
+.pagination button:disabled {
+    background-color: #FFD700;
+    color: #000000;
+}
+
+/* ============================== FILTRAGE ============================== */
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.reset-button {
+    padding: 0.6vw 1.125vw;
+    font-size: 1.5rem;
+    background: var(--main-color);
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
+.reset-button:hover {
+    color: white;
+    background: orange;
+}
+
+
+.filter-item {
+    flex: 1 1 30%;
+    min-width: 135px;
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.filter-item label {
+    font-weight: 600;
+    color: var(--main-color);
+    display: block;
+    margin-bottom: 7.5px;
+}
+
+.filter-item input, .filter-item select {
+    width: 100%;
+    padding: 7.5px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.125rem;
+    margin-top: 7.5px;
+}
+
+/* Style pour la page active */
+.active-page {
+    font-weight: bold;
+    color: grey;
+    cursor: default;
+    text-decoration: none;
+}
